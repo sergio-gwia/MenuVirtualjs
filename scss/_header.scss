@@ -1,0 +1,65 @@
+
+body {
+    background-color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    height: 40px;
+    background-color: black;
+}
+
+.descuento {
+    background-color: #ED1C24;
+    color: white;
+    text-align: center;
+    height: 30px;
+    margin-bottom: 20px;
+}
+
+.pizza_opcion {
+    border-radius: 30px;
+    border: 2px solid white;
+    margin-bottom: 10px;
+}
+
+.footer_titulo {
+    text-align: center;
+    color: white;
+}
+
+.redes_sociales {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 10px;
+
+}
+
+.tarjeta {
+    background-color: black;
+    border: none;
+}
+
+.pizza_pedido{
+    margin-bottom: 50px;
+}
+
+.btn {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.pedido-titulo {
+    margin-bottom: 20px;
+}
+
+.list-group {
+    width: 80%;
+}
