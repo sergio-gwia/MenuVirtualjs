@@ -20,7 +20,7 @@ function crearUsuario() {
             contraseña = prompt("Ingrese una contraseña  valida")
         }
 
-        if (contraseña != null) {
+        if (contraseña != null && usuario != null) {
             alert("Hola " + usuario + ", gracias por registrarte. Tenes 15% de descuento en tu primer pedido. ")
         }else{
             alert("Podes registrate en otro momento")
