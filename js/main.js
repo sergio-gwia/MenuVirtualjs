@@ -42,7 +42,7 @@ crearUsuario();
 
 if (usuario != null && contraseña != null) {
 
-    let pedido = prompt("Elegi la opcion para tu pedido: \n 1. Muzzarella $1200 \n 2. Fugazza $1300 \n 3. Napolitana $1250 \n 4. Morron $1400 \n Ingresa listo para finalizar el pedido" )
+    let pedido = prompt("Ingresa un numero de opcion para tu pedido: \n 1. Muzzarella $1200 \n 2. Fugazza $1300 \n 3. Napolitana $1250 \n 4. Morron $1400 \n Ingresa listo para finalizar el pedido" )
 
         if (pedido == 1 || pedido == 2 || pedido == 3 || pedido == 4 || pedido == "listo" || pedido == null) {
 
@@ -76,7 +76,7 @@ if (usuario != null && contraseña != null) {
 
         while (pedido !== "listo" || pedido == "") {
     
-            pedido = prompt("Podes seguir armando tu pedido: \n 1. Muzzarella $1200 \n 2. Fugazza $1300 \n 3. Napolitana $1250 \n 4. Morron $1400 \n Ingresa listo para finalizar el pedido")
+            pedido = prompt("Podes seguir armando tu pedido! \n Ingresa un numero de opcion: \n 1. Muzzarella $1200 \n 2. Fugazza $1300 \n 3. Napolitana $1250 \n 4. Morron $1400 \n Ingresa listo para finalizar el pedido")
 
             if (pedido == 1 || pedido == 2 || pedido == 3 || pedido == 4 || pedido == "listo") {
 
