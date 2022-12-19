@@ -5,6 +5,31 @@ let subtotal = 0;
 
 let total;
 
+class Producto {
+    constructor(tipo, cantidad, ingrediente, precio, stock) {
+        this.tipo = tipo;
+        this.cantidad = cantidad;
+        this.ingrediente = ingrediente;
+        this.precio = precio;
+        this.stock = stock;
+        this.descontar = () => {
+            this.stock = this.stock - 1;
+        };
+    }
+} 
+
+const muzzarella = new Producto("Muzzarella", 0, "Salsa de tomate, Muzzarela y aceitunas", 1200, 120);
+const fugazza = new Producto("Fugazza", 0, "Muzzarela, Cebolla y Oregano", 1300, 105);
+const napolitana = new Producto("Napolitana", 0, "Muzzarella, ajo, tomates y perejil", 1250, 203);
+const morron = new Producto("Muzzarella", 0,"Muzzarella, morron, jamon York y aceitnuas", 1400, 146);
+
+const Pizzas = []
+
+Pizzas.push(muzzarella);
+Pizzas.push(fugazza);
+Pizzas.push(napolitana);
+Pizzas.push(morron);
+
 
 function crearUsuario() {
  
@@ -48,16 +73,24 @@ if (usuario != null && contraseña != null) {
 
             switch (pedido) {
                 case "1":
-                    subtotal = subtotal + 1200
+                    Pizzas[0].cantidad++
+                    Pizzas[0].descontar()
+                    subtotal = subtotal + Pizzas[0].precio
                     break;
                 case "2":
-                    subtotal = subtotal + 1300
+                    Pizzas[1].cantidad++
+                    Pizzas[1].descontar()
+                    subtotal = subtotal + Pizzas[1].precio
                     break;
                 case "3":
-                    subtotal = subtotal + 1250
+                    Pizzas[2].cantidad++
+                    Pizzas[2].descontar()
+                    subtotal = subtotal + Pizzas[2].precio
                     break;
                 case "4":
-                    subtotal = subtotal + 1400
+                    Pizzas[3].cantidad++
+                    Pizzas[3].descontar()
+                    subtotal = subtotal + Pizzas[3].precio
                     break;     
                 case "listo":
                     alert("Podes pedir cuando estes listo!")
@@ -82,16 +115,24 @@ if (usuario != null && contraseña != null) {
 
                 switch (pedido) {
                     case "1":
-                        subtotal = subtotal + 1200
+                        Pizzas[0].cantidad++
+                        Pizzas[0].descontar()
+                        subtotal = subtotal + Pizzas[0].precio
                         break;
                     case "2":
-                        subtotal = subtotal + 1300
+                        Pizzas[1].cantidad++
+                        Pizzas[1].descontar()
+                        subtotal = subtotal + Pizzas[1].precio
                         break;
                     case "3":
-                        subtotal = subtotal + 1250
+                        Pizzas[2].cantidad++
+                        Pizzas[2].descontar()
+                        subtotal = subtotal + Pizzas[2].precio
                         break;
                     case "4":
-                        subtotal = subtotal + 1400
+                        Pizzas[3].cantidad++
+                        Pizzas[3].descontar()
+                        subtotal = subtotal + Pizzas[3].precio
                         break;
                     case "":
                         alert("Ingresa un producto valido o la palabra listo para salir")
@@ -101,6 +142,9 @@ if (usuario != null && contraseña != null) {
                         if (pedido == "listo") {
 
                             if(subtotal !== 0) {
+
+                                alert(`Tu pedido es de:\n ${Pizzas[0].cantidad} Muzzarella \n ${Pizzas[1].cantidad} Fugazza \n ${Pizzas[2].cantidad} Napolitana \n ${Pizzas[3].cantidad} Morron` )
+
                                 alert("El subtotal de tu pedido es: $" + subtotal)
 
                                 let descuento = subtotal * 0.15
@@ -110,7 +154,6 @@ if (usuario != null && contraseña != null) {
                                 alert("El total de tu pedido con tu 15% de descuento es $" + total)
 
                                 alert("Muchas gracias por tu compra!")
-
                             } else {
                                 alert("No ingresaste nada a tu pedido! \n Puedes volver a pedir cuando estes listo")
                             }
