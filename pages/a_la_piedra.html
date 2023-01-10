@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <title>Ciccone`s Pizza a la Piedra</title>
 </head>
-<body>
+<body id="body">
     
     <header>
 
@@ -53,68 +53,66 @@
     <div class="container">
 
         <div class="pizza_pedido">
-            <a href="./pedido.html"><img src="../img/pizza-muzzarella.svg"  id= "Muzzarella" class="img-fluid pizza_opcion" alt="pizza-muzzarella"></a>
+            <img src="../img/pizza-muzzarella.svg" class="img-fluid pizza_opcion" alt="pizza-muzzarella">
             <div>
                 <h3 class="text-light text-center">Pizza de Muzzarella:</h6>
                 <h6 class="text-light text-center">Salsa de Tomate, Muzzarella y Aceitunas</h6>
                 <h4 class="text-light text-center">$1600</h4>
-
-                <button type="button" class="btn btn-success">Agregar a mi pedido</button>
-
+                <button type="button"  id="botonMuzzarella" class="btn btn-success">Agregar a mi pedido</button>
             </div>
         </div>
 
         <div class="pizza_pedido">
-            <a href="./pedido.html"><img src="../img/pizza-fuggazza.svg" class="img-fluid pizza_opcion" alt="pizza-fuggazza"></a>
+            <img src="../img/pizza-fuggazza.svg" class="img-fluid pizza_opcion" alt="pizza-fuggazza">
 
             <div>
                 <h3 class="text-light text-center">Pizza de Fuggazza:</h6>
                 <h6 class="text-light text-center">Muzzarella, cebollas, Oregano.</h6>
                 <h4 class="text-light text-center">$1800</h4>
 
-                <button type="button" class="btn btn-success">Agregar a mi pedido</button>
+                <a href="./pedido.html"><button type="button" id="botonFuggazza" class="btn btn-success">Agregar a mi pedido</button></a>
 
             </div>
 
         </div>
 
         <div class="pizza_pedido">
-            <a href="./pedido.html"><img src="../img/pizza-camtinpalo.svg" class="img-fluid pizza_opcion" alt="pizza-cantimpalo"></a>
+            <img src="../img/pizza-cantimpalo.svg" class="img-fluid pizza_opcion" alt="pizza-cantimpalo">
 
             <div>
                 <h3 class="text-light text-center">Pizza de Cantimpalo:</h6>
                 <h6 class="text-light text-center">Muzzarella, Ajo, cantimpalo o Longaniza.</h6>
                 <h4 class="text-light text-center">$1800</h4>
 
-                <button type="button" class="btn btn-success">Agregar a mi pedido</button>
+                <a href="./pedido.html"><button type="button" id="botonCantimpalo" class="btn btn-success">Agregar a mi pedido</button></a>
 
             </div>
 
         </div>
 
         <div class="pizza_pedido">
-            <a href="./pedido.html"><img src="../img/pizza-napo.svg" class="img-fluid pizza_opcion" alt="pizza-napo"></a>
+            <img src="../img/pizza-napo.svg" class="img-fluid pizza_opcion" alt="pizza-napo">
 
             <div>
                 <h3 class="text-light text-center">Pizza de Napolitana:</h6>
                 <h6 class="text-light text-center">Muzzarella, Tomates, Ajo y Peregil.</h6>
                 <h4 class="text-light text-center">$1600</h4>
 
-                <button type="button" class="btn btn-success">Agregar a mi pedido</button>
+                <a href="./pedido.html"><button type="button" id="botonNapo" class="btn btn-success">Agregar a mi pedido</button></a>
 
             </div>
 
         </div>
 
         <div class="pizza_pedido">
-            <a href="./pedido.html"><img src="../img/pizza-morron.svg" class="img-fluid pizza_opcion" alt="pizza-morron"></a>
+            <img src="../img/pizza-morron.svg" class="img-fluid pizza_opcion" alt="pizza-morron">
 
             <div>
                 <h3 class="text-light text-center">Pizza de Morron:</h6>
                 <h6 class="text-light text-center">Muzzarella, Morron, Jamon York, Aceitunas.</h6>
                 <h4 class="text-light text-center">$1700</h4>
 
-                <button type="button" class="btn btn-success">Agregar a mi pedido</button>
+                <a href="./pedido.html"><button type="button" id="botonMorron" class="btn btn-success">Agregar a mi pedido</button></a>
 
             </div>
 
@@ -152,7 +150,9 @@
             </svg>
         </div>
     </footer>
-
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="../js/main.js"></script>
+    
 </body>
 </html>
