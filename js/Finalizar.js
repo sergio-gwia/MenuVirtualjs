@@ -2,96 +2,114 @@ let pedidoCantidad = document.querySelector("#pedidoCantidad")
 
 let divSubtotal = document.querySelector("#subtotal")
 
+let divtotal = document.querySelector("#total")
+
 let pedido = JSON.parse(localStorage.getItem("pedido"))
 
-let subtotal = 0
+let btnFinalizar = document.querySelector("#finalizar")
 
-let cantidadMuzzarella = 0
-let precioMuzzarella = 0
-let cantidadFugazza = 0
-let precioFugazza = 0
-let cantidadCantimpalo = 0
-let precioCantimpalo = 0
-let cantidadNapo = 0
-let precioNapo = 0
-let cantidadMorron = 0
-let precioMorron = 0
-let cantidadAnana = 0
-let precioAnana = 0
-let cantidadRoquefort = 0
-let precioRoquefort = 0
+let tipos = []
 
-for (const iterator of pedido) {
-    switch (iterator.tipo) {
+let precios = []
+
+let divMuzzarella = document.createElement("div")
+let divFugazza = document.createElement("div")
+let divCantimpalo = document.createElement("div")
+let divNapolitana = document.createElement("div")
+let divMorron = document.createElement("div")
+let divAnana = document.createElement("div")
+let divRoquefort = document.createElement("div")
+let divJamon = document.createElement("div")
+let divHuevo = document.createElement("div")
+let divAnchoas = document.createElement("div")
+
+for (const i of pedido) {
+    tipos.push(i.tipo)
+    precios.push(i.precio)
+}
+
+for (const i of tipos) {
+    switch (i) {
         case "Muzzarella":
-            cantidadMuzzarella++
-            precioMuzzarella = precioMuzzarella + 1200
+        divMuzzarella.innerText = `${tipos.filter(element => element == "Muzzarella").length} x ${i}`
+        pedidoCantidad.append(divMuzzarella)    
             break;
         case "Fugazza":
-            cantidadFugazza++
-            precioFugazza = precioFugazza + 1800
-            break;   
+        divFugazza.innerText = `${tipos.filter(element => element == "Fugazza").length} x ${i}`
+        pedidoCantidad.append(divFugazza)    
+            break;
         case "Cantimpalo":
-            cantidadCantimpalo++
-            precioCantimpalo = precioCantimpalo + 1800
+        divCantimpalo.innerText = `${tipos.filter(element => element == "Cantimpalo").length} x ${i}`
+        pedidoCantidad.append(divCantimpalo)    
             break;
         case "Napolitana":
-            cantidadNapo++
-            precioNapo = precioNapo + 1600
-            break; 
+        divNapolitana.innerText = `${tipos.filter(element => element == "Napolitana").length} x ${i}`
+        pedidoCantidad.append(divNapolitana)    
+            break;
         case "Morron":
-            cantidadMorron++
-            precioMorron = precioMorron + 1700
-            break;  
+        divMorron.innerText = `${tipos.filter(element => element == "Morron").length} x ${i}`
+        pedidoCantidad.append(divMorron)    
+            break;
         case "Anana":
-            cantidadAnana++
-            precioAnana = precioAnana + 1900
-            break; 
+        divAnana.innerText = `${tipos.filter(element => element == "Anana").length} x ${i}`
+        pedidoCantidad.append(divAnana)    
+            break;
         case "Roquefort":
-            cantidadRoquefort++
-            precioRoquefort = precioRoquefort + 1800
-            break;               
+        divRoquefort.innerText = `${tipos.filter(element => element == "Roquefort").length} x ${i}`
+        pedidoCantidad.append(divRoquefort)    
+            break;   
+        case "Jamon":
+        divJamon.innerText = `${tipos.filter(element => element == "Jamon").length} x ${i}`
+        pedidoCantidad.append(divJamon)    
+            break;
+        case "Huevo":
+        divHuevo.innerText = `${tipos.filter(element => element == "Huevo").length} x ${i}`
+        pedidoCantidad.append(divHuevo)    
+            break; 
+        case "Anchoas":
+        divAnchoas.innerText = `${tipos.filter(element => element == "Anchoas").length} x ${i}`
+        pedidoCantidad.append(divAnchoas)    
+            break;            
         default:
             break;
     }
-}    
-
-if (cantidadMuzzarella != 0) {
-    let divMuzzarella = document.createElement("div")
-    divMuzzarella.innerText = `${cantidadMuzzarella} x Muzzarella`
-    pedidoCantidad.append(divMuzzarella)
 }
 
-if (cantidadFugazza != 0) {
-    let divfugazza = document.createElement("div")
-    divfugazza.innerText = `${cantidadFugazza} x Fugazza`
-    pedidoCantidad.append(divfugazza)
-}
+let eliminarPedido = document.createElement("button")
+eliminarPedido.innerText = "Eliminar Pedido"
+eliminarPedido.classList.add("btn")
+eliminarPedido.classList.add("btn-success")
+pedidoCantidad.appendChild(eliminarPedido)
 
-if (cantidadCantimpalo != 0) {
-    let divCantimpalo = document.createElement("div")
-    divCantimpalo.innerText = `${cantidadCantimpalo} x Cantimpalo`
-    pedidoCantidad.append(divCantimpalo)
-}
+eliminarPedido.addEventListener("click", ()=>{
+    localStorage.clear()
+    window.location.href = `/index.html`
+})
 
-if (cantidadNapo != 0) {
-    let divNapo = document.createElement("div")
-    divNapo.innerText = `${cantidadNapo} x Napolitana`
-    pedidoCantidad.append(divNapo)
-}
+let subtotal = precios.reduce((a, b) => a + b, 0);
 
-if (cantidadMorron != 0) {
-    let divMorron = document.createElement("div")
-    divMorron.innerText = `${cantidadMorron} x Morron`
-    pedidoCantidad.append(divMorron)
-}
+divSubtotal.innerText = `$ ${subtotal}`
 
-if (cantidadAnana != 0) {
-    let divAnana = document.createElement("div")
-    divAnana.innerText = `${cantidadAnana} x Anana`
-    pedidoCantidad.append(divAnana)
-}
+let total = subtotal - (subtotal * 0.15)
 
-subtotal = precioMuzzarella + precioFugazza + precioCantimpalo + precioNapo + precioMorron
+divtotal.innerText= `$${total}`
 
-divSubtotal.innerText = ` $${subtotal}`
+let nombreCliente = document.querySelector("#nombre-cliente")
+
+btnFinalizar.addEventListener("click", (e)=>{
+    e.preventDefault()
+    Swal.fire({
+        title: `Gracias ${nombreCliente.value}! Tu pedido esta confirmado!`,
+        text: `Llegara a tu domicilio en aproximadamente ${Math.floor(Math.random() * 40)} minutos!`,
+        icon: 'success',
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'OK!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = `../index.html`
+        }
+      })
+    localStorage.clear()  
+})
+

@@ -1,0 +1,72 @@
+[
+    {
+       "id":1,
+       "tipo":"Muzzarella",
+       "ingrediente":"Salsa de tomate, Muzzarella y aceitunas",
+       "stock":105,
+       "precio": 1600
+    },
+    {
+       "id":2,
+       "tipo":"Fugazza",
+       "ingrediente":"Muzzarela, Cebolla y Oregano",
+       "stock":105,
+       "precio": 1800
+    },
+    {
+       "id":3,
+       "tipo":"Cantimpalo",
+       "ingrediente":"Muzzarela, tomate, cantimpalo o longaniza",
+       "stock":105,
+       "precio": 1800
+    },
+    {
+       "id":4,
+       "tipo":"Napolitana",
+       "ingrediente":"Muzzarella, ajo, tomates y perejil",
+       "stock":105,
+       "precio": 1600
+    },
+    {
+       "id":5,
+       "tipo":"Morron",
+       "ingrediente":"Muzzarella, morron, jamon York y aceitnuas",
+       "stock":105,
+       "precio": 1700
+    },
+    {
+       "id":6,
+       "tipo":"Anana",
+       "ingrediente":"Salsa de tomate, Muzzarella, aceitunas y Anana",
+       "stock":105,
+       "precio": 1900
+    },
+    {
+       "id":7,
+       "tipo":"Roquefort",
+       "ingrediente":"Muzzarella, Tomate, Queso Roquefort, Aceitunas",
+       "stock":105,
+       "precio": 1800
+    },
+    {
+       "id":8,
+       "tipo":"Jamon",
+       "ingrediente":"Muzzarella, Tomate, Jamon Crudo, Albaca",
+       "stock":105,
+       "precio": 2100
+    },
+    {
+       "id":9,
+       "tipo":"Huevo",
+       "ingrediente":"Muzzarella, Tomate, Jamon, Huevo",
+       "stock":105,
+       "precio": 1500
+    },
+    {
+       "id":10,
+       "tipo":"Anchoas",
+       "ingrediente":"Muzzarella, Tomate, Anchos, Aceitunas",
+       "stock":105,
+       "precio": 2100
+    }
+ ]
